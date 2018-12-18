@@ -19,7 +19,7 @@ msg = Message("Xin nghỉ ốm", to = "C4e.techkidsvn@gmail.com", html = html_co
 current_hour = datetime.now().hour
 
 while True:
-    if current_hour > 7:
+    if 7 < current_hour < 8:
         gmail.send(msg)
         break
     else:
