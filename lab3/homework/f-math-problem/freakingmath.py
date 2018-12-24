@@ -1,9 +1,11 @@
 from random import *
-
+from calc_func import evaluate
 def generate_quiz():
     # Hint: Return [x, y, op, result]
     x = randint(0, 30)
     y = randint(1, 30)
+
+    error = randint(-1, 1)
     
     if x >= y :
         if x % y == 0:
@@ -13,61 +15,21 @@ def generate_quiz():
     else:
         op = choice(["+", "*"])
     
-    error = randint(-1, 1)
-
-    if op == "+":
-        result = x + y + error
-    elif op == "-":
-        result = x - y + error
-    elif op == "*":
-        result = x * y + error
-    else:
-        result = x / y + error
-
+    result = evaluate(x, y, op) + error
+    
     return(x, y, op, result)
 
 def check_answer(x, y, op, result, user_choice):
-    if op == "+":
-        if user_choice == True:
-            if result == x + y:
-                print("Hura")
-            else:
-                print("Wrong")
+    if user_choice == True:
+        if evaluate(x, y, op) == result:
+            return(True)
         else:
-            if result == x + y:
-                print("Wrong")
-            else:
-                print("Hura")
-    elif op == "*":
-        if user_choice == True:
-            if result == x * y:
-                print("Hura")
-            else:
-                print("Wrong")
+            return(False)
+    elif user_choice == False:
+        if evaluate(x, y, op) == result:
+            return(False)
         else:
-            if result == x * y:
-                print("Wrong")
-            else:
-                print("Hura")
-    elif op == "-":
-        if user_choice == True:
-            if result == x - y:
-                print("Hura")
-            else:
-                print("Wrong")
-        else:
-            if result == x - y:
-                print("Wrong")
-            else:
-                print("Hura")
-    else:
-        if user_choice == True:
-            if result == x / y:
-                print("Hura")
-            else:
-                print("Wrong")
-        else:
-            if result == x / y:
-                print("Wrong")
-            else:
-                print("Hura")
+            return(True)
+
+
+    

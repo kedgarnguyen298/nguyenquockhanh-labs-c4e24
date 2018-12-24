@@ -1,0 +1,40 @@
+#1. Why should we use functions at all?
+    Because of reusability of functions
+
+#2. How to define/declare a function?
+    A function is defined by double parentheses
+    e.g: print()
+
+#3. How to call/use a function?
+    e.g:
+
+    def sum():              #declare a function
+        s = a + b
+        print(s)
+    sum()                   #call the function
+
+#4. What is return, why and how do we use it?
+    _ The return statement causes your function to exit and hand back a value to its caller
+    _ The return statement is used when a function is ready to return a value to its caller
+    _ e.g:
+    
+    def sum():             
+        s = a + b
+        return(s)
+    
+    and then we can use s in expressions, just like math
+
+#5. Do we have to use return in every function?
+    No
+
+#6. What are function arguments/parameters, why and how we use it?
+    _ That is often used to refer to the variable as found in the function definition
+    _e.g:
+     
+    def sum(4, 5):             
+        s = a + b
+
+#7. How to use function from a different file other than our currently working file?
+    Create a link from currently working file to the file which needed relate
+    Use form: from <linked file> import <linked function>
+    
